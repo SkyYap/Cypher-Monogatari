@@ -16,7 +16,7 @@ const OPTIMISM_SEPOLIA_RPC_URL = process.env.OPTIMISM_SEPOLIA_RPC_URL;
 const ARBITRUM_SEPOLIA_RPC_URL = process.env.ARBITRUM_SEPOLIA_RPC_URL;
 // const AVALANCHE_FUJI_RPC_URL = process.env.AVALANCHE_FUJI_RPC_URL;
 const POLYGON_AMOY_RPC_URL = process.env.POLYGON_AMOY_RPC_URL;
-// const BNB_CHAIN_TESTNET_RPC_URL = process.env.BNB_CHAIN_TESTNET_RPC_URL;
+const BNB_CHAIN_TESTNET_RPC_URL = process.env.BNB_CHAIN_TESTNET_RPC_URL;
 const BASE_SEPOLIA_RPC_URL = process.env.BASE_SEPOLIA_RPC_URL;
 // const KROMA_SEPOLIA_RPC_URL = process.env.KROMA_SEPOLIA_RPC_URL;
 // const WEMIX_TESTNET_RPC_URL = process.env.WEMIX_TESTNET_RPC_URL;
@@ -54,11 +54,11 @@ const config: HardhatUserConfig = {
     //   accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
     //   chainId: 43113
     // },
-    // bnbChainTestnet: {
-    //   url: BNB_CHAIN_TESTNET_RPC_URL !== undefined ? BNB_CHAIN_TESTNET_RPC_URL : '',
-    //   accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
-    //   chainId: 97
-    // },
+    bnbChainTestnet: {
+      url: BNB_CHAIN_TESTNET_RPC_URL !== undefined ? BNB_CHAIN_TESTNET_RPC_URL : '',
+      accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
+      chainId: 97
+    },
     baseSepolia: {
       url: BASE_SEPOLIA_RPC_URL !== undefined ? BASE_SEPOLIA_RPC_URL : '',
       accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
@@ -115,7 +115,15 @@ const config: HardhatUserConfig = {
           apiURL: 'https://api-sepolia.basescan.org/api',
           browserURL: 'https://sepolia.basescan.org'
         }
-      }
+      },
+      {
+        network: 'bnbChainTestnet',
+        chainId: 97,
+        urls: {
+          apiURL: 'https://api-testnet.bscscan.com/api',
+          browserURL: 'https://testnet.bscscan.com'
+        }
+      },
     ]
   }
 };

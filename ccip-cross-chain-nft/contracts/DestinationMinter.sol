@@ -3,8 +3,8 @@ pragma solidity 0.8.20;
 
 import {CCIPReceiver} from "@chainlink/contracts-ccip/src/v0.8/ccip/applications/CCIPReceiver.sol";
 import {Client} from "@chainlink/contracts-ccip/src/v0.8/ccip/libraries/Client.sol";
-// import {MyNFT} from "./MyNFT.sol";
-import {MyToken} from "./MyToken.sol";
+import {MyNFT} from "./MyNFT.sol";
+// import {MyToken} from "./MyToken.sol";
 
 /**
  * THIS IS AN EXAMPLE CONTRACT THAT USES HARDCODED VALUES FOR CLARITY.
@@ -12,18 +12,18 @@ import {MyToken} from "./MyToken.sol";
  * DO NOT USE THIS CODE IN PRODUCTION.
  */
 contract DestinationMinter is CCIPReceiver {
-    MyToken token;
+    MyNFT nft;
 
     event MintCallSuccessfull();
 
-    constructor(address router, address tokenAddress) CCIPReceiver(router) {
-        token = MyToken(tokenAddress);
+    constructor(address router, address nftAddress) CCIPReceiver(router) {
+        nft = MyNFT(nftAddress);
     }
 
     function _ccipReceive(
         Client.Any2EVMMessage memory message
     ) internal override {
-        (bool success, ) = address(token).call(message.data);
+        (bool success, ) = address(nft).call(message.data);
         require(success);
         emit MintCallSuccessfull();
     }

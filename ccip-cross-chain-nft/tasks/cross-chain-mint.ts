@@ -12,9 +12,8 @@ task(`cross-chain-mint`, `Mints tokens by sending a Cross-Chain Message`)
     .addParam(`destinationBlockchain`, `The name of the destination blockchain (for example polygonAmoy)`)
     .addParam(`destinationMinter`, `The address of the DestinationMinter.sol smart contract on the destination blockchain`)
     .addParam(`payFeesIn`, `Choose between 'Native' and 'LINK'`)
-    .addParam(`amount`, `The amount of tokens to mint`)
     .setAction(async (taskArguments: TaskArguments) => {
-        const { sourceBlockchain, sourceMinter, destinationBlockchain, destinationMinter, payFeesIn, amount } = taskArguments;
+        const { sourceBlockchain, sourceMinter, destinationBlockchain, destinationMinter, payFeesIn } = taskArguments;
 
         const privateKey = getPrivateKey();
         const sourceRpcProviderUrl = getProviderRpcUrl(sourceBlockchain);
@@ -36,7 +35,6 @@ task(`cross-chain-mint`, `Mints tokens by sending a Cross-Chain Message`)
         const tx = await sourceMinterContract.mint(
             destinationChainSelector,
             destinationMinter,
-            ethers.parseEther(amount),
             fees
         );
 

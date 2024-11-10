@@ -38,18 +38,11 @@ contract SourceMinter is Withdraw {
     function mint(
         uint64 destinationChainSelector,
         address receiver,
-        uint256 amount,
         PayFeesIn payFeesIn
     ) external {
-        // Check if the user has enough staked balance
-        require(stakedBalances[msg.sender] >= amount, "Insufficient staked balance");
-
-        // Deduct the amount from the user's staked balance
-        stakedBalances[msg.sender] -= amount;
-
         Client.EVM2AnyMessage memory message = Client.EVM2AnyMessage({
             receiver: abi.encode(receiver),
-            data: abi.encodeWithSignature("mint(address,uint256)", msg.sender, amount),
+            data: abi.encodeWithSignature("mint(address)", msg.sender),
             tokenAmounts: new Client.EVMTokenAmount[](0),
             extraArgs: "",
             feeToken: payFeesIn == PayFeesIn.LINK ? i_link : address(0)

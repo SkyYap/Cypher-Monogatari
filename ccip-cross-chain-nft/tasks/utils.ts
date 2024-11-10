@@ -73,8 +73,8 @@ export const getRouterConfig = (network: string) => {
             return routerConfig.arbitrumSepolia;
         // case "avalancheFuji":
         //     return routerConfig.avalancheFuji;
-        // case "bnbChainTestnet":
-        //     return routerConfig.bnbChainTestnet;
+        case "bnbChainTestnet":
+            return routerConfig.bnbChainTestnet;
         case "baseSepolia":
             return routerConfig.baseSepolia;
         // case "kromaSepolia":

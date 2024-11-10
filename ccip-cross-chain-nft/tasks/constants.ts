@@ -26,7 +26,7 @@ export const LINK_ADDRESSES: AddressMap = {
     [`optimismSepolia`]: `0xE4aB69C077896252FAFBD49EFD26B5D171A32410`,
     [`arbitrumSepolia`]: `0xb1D4538B4571d411F07960EF2838Ce337FE1E80E`,
     // [`avalancheFuji`]: `0x0b9d5D9136855f6FEc3c0993feE6E9CE8a297846`,
-    // [`bnbChainTestnet`]: `0x84b9B910527Ad5C03A9Ca831909E21e236EA7b06`,
+    [`bnbChainTestnet`]: `0x84b9B910527Ad5C03A9Ca831909E21e236EA7b06`,
     [`baseSepolia`]: `0xE4aB69C077896252FAFBD49EFD26B5D171A32410`,
     // [`kromaSepolia`]: `0xa75cCA5b404ec6F4BB6EC4853D177FE7057085c8`,
     // [`wemixTestnet`]: `0x3580c7A817cCD41f7e02143BFa411D4EeAE78093`,
@@ -60,11 +60,11 @@ export const routerConfig = {
         chainSelector: `3478487238524512106`,
         feeTokens: [LINK_ADDRESSES[`arbitrumSepolia`], `0xE591bf0A0CF924A0674d7792db046B23CEbF5f34`]
     },
-    // bnbChainTestnet: {
-    //     address: `0xE1053aE1857476f36A3C62580FF9b016E8EE8F6f`,
-    //     chainSelector: `13264668187771770619`,
-    //     feeTokens: [LINK_ADDRESSES[`bnbChainTestnet`], `0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd`]
-    // },
+    bnbChainTestnet: {
+        address: `0xE1053aE1857476f36A3C62580FF9b016E8EE8F6f`,
+        chainSelector: `13264668187771770619`,
+        feeTokens: [LINK_ADDRESSES[`bnbChainTestnet`], `0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd`]
+    },
     baseSepolia: {
         address: `0xD3b06cEbF099CE7DA4AcCf578aaebFDBd6e88a93`,
         chainSelector: `10344971235874465080`,
