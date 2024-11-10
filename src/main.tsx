@@ -3,11 +3,10 @@ import { createRoot } from 'react-dom/client';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { WagmiProvider } from 'wagmi';
 import {
-  mainnet,
-  polygon,
-  optimism,
-  arbitrum,
-  base,
+  sepolia,
+  optimismSepolia,
+  arbitrumSepolia,
+  baseSepolia,
 } from 'wagmi/chains';
 import App from './App';
 import './index.css';
@@ -28,7 +27,11 @@ import {
 const config = getDefaultConfig({
   appName: 'My RainbowKit App',
   projectId: 'YOUR_PROJECT_ID',
-  chains: [mainnet, polygon, optimism, arbitrum, base],
+  chains: [
+    sepolia,
+    optimismSepolia,
+    arbitrumSepolia,
+    baseSepolia],
   ssr: true, // If your dApp uses server side rendering (SSR)
 });
 
