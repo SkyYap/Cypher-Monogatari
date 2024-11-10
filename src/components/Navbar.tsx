@@ -8,7 +8,7 @@ export function Navbar() {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Coins className="h-8 w-8 text-blue-600" />
-            <span className="ml-2 text-xl font-bold">LST Aggregator</span>
+            <span className="ml-2 text-xl font-bold">Cypher Monogatari</span>
           </div>
 
           <div className="flex items-center space-x-4">

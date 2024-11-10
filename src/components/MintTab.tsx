@@ -12,8 +12,7 @@ export function MintTab() {
             Mint your Staking Position as NFT
           </h3>
           <p className="text-gray-600 mb-6">
-            Transform your staking position into a unique NFT that represents your
-            contribution to the Ethereum network.
+            Transform your staking position into a unique Cypher Monogatari NFT
           </p>
           <button
             disabled={!isConnected}

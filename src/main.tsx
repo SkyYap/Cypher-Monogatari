@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { WagmiProvider } from 'wagmi';
 import {
   sepolia,
+  bscTestnet,
   optimismSepolia,
   arbitrumSepolia,
   baseSepolia,
@@ -29,6 +30,7 @@ const config = getDefaultConfig({
   projectId: 'YOUR_PROJECT_ID',
   chains: [
     sepolia,
+    bscTestnet,
     optimismSepolia,
     arbitrumSepolia,
     baseSepolia],
